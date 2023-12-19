@@ -1,13 +1,14 @@
 exports.checkAccountPayload = (req, res, next) => {
-  // DO YOUR MAGIC
-  // Note: you can either write "manual" validation logic
-  // or use the Yup library (not currently installed)
+  console.log('Account payload being checked')
+  next()
 }
 
 exports.checkAccountNameUnique = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('Account Name Unique')
+  next()
 }
 
 exports.checkAccountId = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('Account Id checked')
+  next()
 }
