@@ -22,7 +22,8 @@ router.post(
   md.checkAccountNameUnique, 
   async (req, res, next) => {
     try {
-      const newAccount = await Account.create(req.body)
+      const newAccount = 
+      await Account.create(req.body)
   res.status(201).json(newAccount)
     } catch (err) {
       next(err)
@@ -42,9 +43,10 @@ res.json('update account using id')
   }
 });
 
-router.delete('/:id', md.checkAccountId, (req, res, next) => {
+router.delete('/:id', md.checkAccountId, async (req, res, next) => {
   try {
-res.json('delete account using id')
+    await Account.deleteById(req.params.id)
+    res.json(req.account)
   } catch (err) {
     next(err)
   }
